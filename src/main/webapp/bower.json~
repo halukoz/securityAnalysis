@@ -1,0 +1,17 @@
+{
+  "name": "webapp",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "ozduman <haluk.ozduman@gt-arc.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/halukoz/cryptographic_analysis",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

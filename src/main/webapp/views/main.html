@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Cryptographic analysis</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div id="wrapper" ng-controller="MainCtrl">
+		<header>
+			<h1>
+				<span id="header">Cryptographic Analysis</span>
+			</h1>
+		</header>
+		<section class="left-col">
+			<div ng-controller="CaesarCtrl">
+			<a id="ceasarCipher">
+			<h3>{{title}}</h3>
+			<p>Caesar cipher is the shift and simetric cipher. This cipher is
+				one of the simplest and most widely known encryption techniques. It
+				is a type of substitution cipher in which each letter in the
+				plaintext is replaced by a letter some fixed number of positions
+				down the alphabet. If the sender encrypt "a" with 3,
+				then "a" will replace with "d". Then, if the receiver enrypt "d"
+				with 3, then the receiver will receive "a".</p>
+			<p><p>
+				<div>
+					<form class="cipherform">
+						<span><strong>Encryption</strong></span><br> Plain Text:<br>
+						<input type="text" ng-model="ceasarPlainText"> <br>
+						Shift Amount:<br> <input type="text" ng-model="shiftAmountPlainText"> <br>
+						<button type="button" ng-click="encryptWithCeasarCipher()">Encrypt</button>
+						<button type="button" ng-click="clearEncryptionCeasarCipher()">Clear</button>
+						<br>
+						<div><strong>Result:</strong>{{encryptedText}}</div>
+					</form>
+					<form class="cipherform">
+						<span><strong>Decryption</strong></span><br> Plain Text:<br>
+						<input type="text" ng-model="ceasarCipheredText"> <br>
+						Shift Amount:<br> <input type="text" ng-model="shiftAmountCipheredText"> <br>
+						<button type="button" ng-click="decryptWithCeasarCipher()">Decrypt</button>
+						<button type="button" ng-click="clearDecryptionCeasarCipher()">Clear</button>
+						<div><strong>Result:</strong>{{decryptedText}}</div>
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			</a>
+		</section>
+
+    <div ng-controller="VigenereCtrl">
+			<aside class="sidebar">
+				<a id="vigenereCipher">
+				<h3>Vigenere Cipher</h3>
+				<p>The Vigenere cipher is a method of encrypting alphabetic text by using a series of different Caesar ciphers based on the letters of a keyword.</p>
+				<div>
+					<form class="cipherform">
+						<span><strong>Encryption</strong></span><br> Plain Text:<br>
+						<input type="text" ng-model="vigenerePlainText"><br>
+						Key:<br> <input type="text" ng-model="keyPlainText"><br>
+						<button type="button" ng-click="encryptWithVigenereCipher()">Encrypt</button>
+						<button type="button" ng-click="clearEncryptionVigenereCipher()">Clear</button>
+						<br>
+						<div><strong>Result:</strong>{{encryptedText}}</div>
+					</form>
+					<form class="cipherform">
+						<span><strong>Decryption</strong></span><br> Cipher Text:<br>
+						<input type="text" ng-model="vigenereCipheredText"><br>
+						Key:<br> <input type="text" ng-model="keyCipheredText"><br>
+						<button type="button" ng-click="decryptWithVigenereCipher()">Decrypt</button>
+						<button type="button" ng-click="clearDecryptionVigenereCipher()">Clear</button>
+						<br>
+						<div><strong>Result:</strong>{{decryptedText}}</div>
+					</form>
+				</div>
+				<div class="clear"></div>
+				</a>
+			</aside>
+		</div>
+
+		<div ng-controller="OneTimePaddingCtrl">
+			<aside class="sidebar">
+				<a id="oneTimePadding">
+				<h3>One Time Padding</h3>
+				<p>A One-time pad is a method of encryption, depends on xor operations..</p>
+				<div>
+					<form class="cipherform">
+						<span><strong>Encryption</strong></span><br> Plain Text:<br>
+						<input type="text" ng-model="oneTimePaddingPlainText"><br>
+						Key:<br> <input type="text" ng-model="keyPlainText"><br>
+						<button type="button" ng-click="encryptWithOneTimePadding()">Encrypt</button>
+						<button type="button" ng-click="clearEncryptionOneTimePadding()">Clear</button>
+						<br>
+						<div><strong>Result:</strong>{{encryptedText}}</div>
+					</form>
+					<form class="cipherform">
+						<span><strong>Decryption</strong></span><br> Cipher Text:<br>
+						<input type="text" ng-model="oneTimePaddingCipheredText"><br>
+						Key:<br> <input type="text" ng-model="keyCipheredText"><br>
+						<button type="button" ng-click="decryptWithOneTimePadding()">Decrypt</button>
+						<button type="button" ng-click="clearDecryptionOneTimePadding()">Clear</button>
+						<br>
+						<div><strong>Result:</strong>{{decryptedText}}</div>
+					</form>
+				</div>
+				</a>
+			</aside>
+		</div>
+
+		<section class="left-col">
+			<div ng-controller="AesCtrl">
+			  <a id="aes">
+				<h3 >Advanced Encryption Standart</h3>
+				<p>AES depends on substitution-permutation network, combination of both substitution and permutation, and is fast in both software and hardware. AES does not use a Feistel network. <br><br>AES is a variant of Rijndael which has a fixed block size of 128 bits, and a key size of 128, 192, or 256 bits. By contrast, the Rijndael specification per se is specified with block and key sizes that may be any multiple of 32 bits, both with a minimum of 128 and a maximum of 256 bits.
+				</p>
+				<br>
+				<br>
+				<div>
+					<form class="cipherform">
+						<span><strong>Encryption</strong></span><br> Plain Text:<br>
+						<input type="text" ng-model="aesPlainText"><br> Key:<br>
+						<input type="text" ng-model="keyPlainText"><br>
+						<button type="button" ng-click="encryptWithAes()">Encrypt</button>
+						<button type="button" ng-click="clearEncryptionAes()">Clear</button>
+						<br>
+						<div><strong>Result:</strong>{{encryptedText}}</div>
+					</form>
+					<form class="cipherform">
+						<span><strong>Decryption</strong></span><br> Cipher Text:<br>
+						<input type="text" ng-model="aesCipheredText"><br>
+						Key:<br> <input type="text" ng-model="keyCipheredText"><br>
+						<button type="button" ng-click="decryptWithAes()">Decrypt</button>
+						<button type="button" ng-click="clearDecryptionAes()">Clear</button>
+						<br>
+						<div><strong>Result:</strong>{{decryptedText}}</div>
+					</form>
+				</div>
+				</a>
+			</div>
+		</section>
+
+		<aside id="desCipher" class="sidebar">
+		  <a id="des">
+			<div ng-controller="DesCtrl">
+				<h3 id="des">Data Encryption Standart (DES)</h3>
+				<p>The DES (Data Encryption Standard) algorithm is the most widely used encryption algorithm in the world.</p>
+				<div>
+					<form class="cipherform des">
+						<span><strong>Encryption</strong></span><br> Plain Text:<br>
+						<input type="text" ng-model="desPlainText"> <br>
+						<button type="button" ng-click="encryptWithDes()">Encrypt</button>
+						<button type="button" ng-click="clearEncryptionDes()">Clear</button>
+						<br>
+						<div><strong>Result:</strong>{{encryptedText}}</div>
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			</a>
+		</aside>
+		<div class="clear"></div>
+		<footer>
+			<h3>Haluk, 2016</h3>
+		</footer>
+	</div>
+</body>
+</html>

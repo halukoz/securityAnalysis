@@ -1,0 +1,21 @@
+{
+  "name": "webapp",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "ozduman <halukozduman@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/halukoz/cryptographic_analysis",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-mocks": "^1.6.1"
+  }
+}
